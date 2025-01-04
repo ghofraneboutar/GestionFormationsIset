@@ -1,0 +1,34 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: blue">
+    <div class="container-fluid">
+      <a class="navbar-brand" [routerLink]="">acceuil</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page"  routerLink="/recherche">formations</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+</nav>
+
+<table class="table table-success table-striped">
+            <tr class="table-secondary">
+              <th>#</th>
+              <th>Programme</th>
+              <th>Categories</th>
+            </tr>
+          @for (formation of formations; track $index) {
+            <tr>
+              <th scope="row">{{formation.id}}</th>
+              <a href= "{{formation.programmeUrl}}" class="card-link">{{formation.programmeUrl}}</a>
+              <td>{{formation.categories}}</td>
+            </tr>
+          }
+
+</table>
+
+
+            

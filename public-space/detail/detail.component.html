@@ -1,0 +1,23 @@
+<div class="card">
+    <div class="row no-gutters align-items-center">
+      <div class="col-md-8">
+        <div class="card-body">
+          <h6 class="fw-bold"><strong style="color:cadetblue;">#</strong>{{ formation!.id }}</h6>
+          <h6 class="fw-bold"> <strong style="color:cadetblue;">titre: </strong>{{ formation!.titre }}</h6>
+          <h6 class="fw-bold"> <strong style="color:cadetblue;">description: </strong> {{ formation!.description }}</h6>
+          <h6 class="fw-bold"><strong style="color:cadetblue;">chargeHoraire: </strong>{{ formation!.chargeHoraire}}</h6>
+          <strong style="color:cadetblue;">programme: </strong><a href= "{{formation!.programmeUrl}}" class="card-link">afficher le programme</a>
+
+          <h5 class="fw-bold" style="color:chocolate">liste des Sessions à venir:</h5>
+          <button class="btn btn-warning" routerLink="/inscrire">S'inscrire</button>
+          @for (session of sessions; track $index) {
+                  <h5 class="card-title">Session n° {{session.id}}</h5>
+                  <h6 class="card-subtitle mb-2 text-body-secondary">date debut :{{session.dateDebut}}</h6>
+                  <h6 class="card-subtitle mb-2 text-body-secondary">Date fin :{{session.dateFin}}</h6>
+                  <h6 class="card-subtitle mb-2 text-body-secondary">formation:{{session.description}}</h6>
+                  <h6 class="card-subtitle mb-2 text-body-secondary">formateurs:{{session.formateurs}}</h6>
+          }  
+        </div>
+      </div>
+    </div>
+  </div>
