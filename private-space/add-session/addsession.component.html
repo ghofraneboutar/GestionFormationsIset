@@ -1,0 +1,37 @@
+<h2>Ajout d'une nouvelle session :</h2>
+<form id="addForm" (ngSubmit)="addSession(f)" #f="ngForm">
+    <div class="mb-3">
+      <label for="datedebut" class="form-label">datedebut</label>
+      <input type="text" class="form-control" id="datedebut" name="datedebut" #datedebut="ngModel" required  ngModel/>
+      @if(datedebut.invalid && datedebut.touched){
+        <span class="erreur"> ce champs est obligatoire </span>
+      }
+       
+    </div>
+    <div class="mb-3">
+      <label for="datefin" class="form-label">datefin</label>
+      <input type="text" class="form-control" id="datefin" name="datefin" #datefin="ngModel" required ngModel/>
+      @if(datefin.invalid && datefin.touched){
+        <span class="erreur"> ce champs est obligatoire </span>
+      }
+    </div>
+    <div class="mb-3">
+      <label for="description" class="form-label">description</label>
+      <input type="text" class="form-control" id="description" name="description" #description="ngModel" required  ngModel/>
+    </div>
+    <div class="mb-3">
+        <label for="carte" class="form-label">formation</label>
+        <input type="text" class="form-control" id="carte" name="carte" #carte="ngModel" required  ngModel/>
+    </div>
+
+    <button 
+        type="submit" 
+        id="btnValidAdd" 
+        class="btn btn-success"
+        [disabled]="f.invalid"
+        (click)="addSession(f)" 
+        >Valider</button>
+</form>  
+
+
+

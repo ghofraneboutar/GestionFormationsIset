@@ -1,0 +1,18 @@
+<h2>{{titre}}</h2>
+<a routerLink="/sessions/add" class="btn btn-success mb-3"> Ajouter une session</a>
+@for (session of sessions; track $index) {
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">Session n° {{session.id}}</h5>
+      <h6 class="card-subtitle mb-2 text-body-secondary"><strong> debut :</strong>{{session.dateDebut}}</h6>
+      <h6 class="card-subtitle mb-2 text-body-secondary"><strong>Date fin :</strong>{{session.dateFin}}</h6>
+      <h6 class="card-text mb-2 text-body-secondary"><strong>description:</strong>{{session.description}}</h6>
+      <h6 class="card-subtitle mb-2 text-body-secondary"><strong>formation:</strong>{{session.formation}}</h6>
+      <h6 class="card-subtitle mb-2 text-body-secondary"><strong>formateurs:</strong>{{session.formateurs}}</h6>
+      <h6 class="card-subtitle mb-2 text-body-secondary"><strong>candidats:</strong>{{session.candidats}}</h6>
+      <a class="btn btn-outline-primary me-3" [routerLink]="['/sessions','edit',session.id]">Editer</a>
+      <button class="btn btn-outline-success me-3" (click)="deleteSession(session.id)">Supprimer</button>
+      
+    </div>
+  </div>
+}

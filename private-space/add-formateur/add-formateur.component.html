@@ -1,0 +1,47 @@
+<h2>Ajout d'un nouveau formateur :</h2>
+<form id="addForm" (ngSubmit)="addFormateur(f)" #f="ngForm">
+    <div class="mb-3">
+      <label for="nom" class="form-label">nom</label>
+      <input type="text" class="form-control" id="nom" name="nom" #nom="ngModel" required  ngModel/>
+      @if(nom.invalid && nom.touched){
+        <span class="erreur"> ce champs est obligatoire </span>
+      }
+       
+    </div>
+    <div class="mb-3">
+      <label for="prenom" class="form-label">prenom</label>
+      <input type="text" class="form-control" id="prenom" name="prenom" #prenom="ngModel" required ngModel/>
+      @if(prenom.invalid && prenom.touched){
+        <span class="erreur"> ce champs est obligatoire </span>
+      }
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label">email</label>
+      <input type="text" class="form-control" id="email" name="email" #email="ngModel" required  ngModel/>
+    </div>
+    <div class="mb-3">
+        <label for="carte" class="form-label">numCarteId</label>
+        <input type="text" class="form-control" id="carte" name="carte" #carte="ngModel" required  ngModel/>
+    </div>
+    <div class="mb-3">
+        <label for="numtel" class="form-label">numtel</label>
+        <input type="text" class="form-control" id="numtel" name="numtel" #numtel="ngModel" required  ngModel/>
+     </div> 
+    <div class="mb-3">
+        <label for="photo" class="form-label">photo</label>
+        <input type="text" class="form-control" id="photo" name="photo" #photo="ngModel" required  ngModel/>
+     </div> 
+    <div class="mb-3">
+        <label for="cv" class="form-label">cv</label>
+        <input type="text" class="form-control" id="cv" name="cv" #cv="ngModel" required  ngModel/>
+    </div>
+    <button 
+        type="submit" 
+        id="btnValidAdd" 
+        class="btn btn-success"
+        [disabled]="f.invalid"
+        (click)="addFormateur(f)" 
+        >Valider</button>
+</form>  
+
+

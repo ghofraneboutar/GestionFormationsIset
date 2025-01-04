@@ -1,0 +1,48 @@
+<h2>Ajout d'une nouvelle formation :</h2>
+<form id="addForm" (ngSubmit)="addFormation(f)" #f="ngForm">
+    <div class="mb-3">
+      <label for="titre" class="form-label">titre</label>
+      <input type="text" class="form-control" id="titre" name="titre" #titre="ngModel" required  ngModel/>
+      @if(titre.invalid && titre.touched){
+        <span class="erreur"> ce champs est obligatoire </span>
+      }
+       
+    </div>
+    <div class="mb-3">
+      <label for="description" class="form-label">description</label>
+      <input type="text" class="form-control" id="description" name="description" #description="ngModel" required ngModel/>
+      @if(description.invalid && description.touched){
+        <span class="erreur"> ce champs est obligatoire </span>
+      }
+    </div>
+    <div class="mb-3">
+      <label for="chargehoraire" class="form-label">chargehoraire</label>
+      <input type="text" class="form-control" id="chargehoraire" name="chargehoraire" #chargehoraire="ngModel" required  ngModel/>
+    </div>
+    <div class="mb-3">
+        <label for="carte" class="form-label">niveau</label>
+        <input type="text" class="form-control" id="carte" name="carte" #carte="ngModel" required  ngModel/>
+    </div>
+    <div class="mb-3">
+        <label for="programme" class="form-label">programme</label>
+        <input type="text" class="form-control" id="programme" name="programme" #programme="ngModel" required  ngModel/>
+     </div> 
+    <div class="mb-3">
+        <label for="motcle" class="form-label">motcle</label>
+        <input type="text" class="form-control" id="motcle" name="motcle" #motcle="ngModel" required  ngModel/>
+     </div> 
+    <div class="mb-3">
+        <label for="categorie" class="form-label">categorie</label>
+        <input type="text" class="form-control" id="categorie" name="categorie" #categorie="ngModel" required  ngModel/>
+    </div>
+    <button 
+        type="submit" 
+        id="btnValidAdd" 
+        class="btn btn-success"
+        [disabled]="f.invalid"
+        (click)="addFormation(f)" 
+        >Valider</button>
+</form>  
+
+
+

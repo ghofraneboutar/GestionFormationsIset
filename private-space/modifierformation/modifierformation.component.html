@@ -1,0 +1,37 @@
+<h2>Editer la formation n° {{formation!.id}} :</h2>
+<form id="addForm" (ngSubmit)="editFormation(f)" #f="ngForm">
+    <div class="mb-3">
+      <label for="titre" class="form-label">titre</label>
+      <input type="text" class="form-control" id="titre" name="titre" #titre="ngModel" ngModel  [(ngModel)]="formation!.titre" required />  
+    </div>
+    <div class="mb-3">
+      <label for="description" class="form-label">description</label>
+      <input type="text" class="form-control" id="description" name="description" #description="ngModel" ngModel [(ngModel)]="formation!.description" required/>
+    </div>
+    <div class="mb-3">
+      <label for="chargehoraire" class="form-label">chargehoraire</label>
+      <input type="text" class="form-control" id="chargehoraire" name="chargehoraire" #chargehoraire="ngModel" ngModel [(ngModel)]="formation!.chargeHoraire" required/>
+    </div>
+    <div class="mb-3">
+        <label for="niveau" class="form-label">niveau</label>
+        <input type="text" class="form-control" id="niveau" name="niveau" #niveau="ngModel" ngModel [(ngModel)]="formation!.niveau" required/>
+      </div>
+      <div class="mb-3">
+        <label for="motcle" class="form-label">motcle</label>
+        <input type="text" class="form-control" id="motcle" name="motcle" #motcle="ngModel" ngModel [(ngModel)]="formation!.motCle" required/>
+      </div>
+      <div class="mb-3">
+        <label for="programme" class="form-label">programme</label>
+        <input type="text" class="form-control" id="programme" name="programme" #programme="ngModel" ngModel [(ngModel)]="formation!.programmeUrl" required/>
+      </div>
+    <button 
+        type="submit" 
+        id="btnValidAdd" 
+        class="btn btn-primary mb-3"
+        [disabled]="f.invalid">
+            Valider
+        </button>
+        
+  </form>
++    
+

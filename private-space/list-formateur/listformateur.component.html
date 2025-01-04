@@ -1,0 +1,39 @@
+<H2>{{title}}</H2>
+<a routerLink="/formateurs/add" class="btn btn-success mb-3"class="btn btn-success mb-3"> Ajouter un formateur</a>
+<table class="table table-striped">
+    <thead>
+      <tr class="table-dark">
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">#</th>
+        <th>nom</th>
+        <th>prenom</th>
+        <th>email</th>
+        <th>numTel</th>
+        <th>carteID</th>
+        <th>photo</th>
+        <th>cv</th>
+        <th>specialite</th>
+        <th>modifier</th>
+        <th>supprimer</th>
+      </tr>
+      @for (formateur of formateurs; track $index) {
+        <tr>
+          <th scope="row">{{formateur.id}}</th>
+          <td>{{formateur.nom}}</td>
+          <td>{{formateur.prenom}}</td>
+          <td>{{formateur.email}}</td>
+          <td>{{formateur.telephone}}</td>
+          <td>{{formateur.cin}}</td>
+          <td><img src="{{ formateur.photo}}" class="card-img" style="height: 20px; width: 30px;" /></td>
+          <td><a href= "{{formateur.cv}}" class="card-link">{{formateur.cv}}</a></td>
+          <td>{{formateur.specialites}}</td>
+          <td><a class="btn btn-primary" [routerLink]="['/formateurs','edit',formateur.id]">Editer</a></td>
+          <td><button class="btn btn-danger" (click)="deleteFormateur(formateur.id)">Supprimer</button></td>
+
+        </tr>
+      }
+</tbody>
+</table>

@@ -1,0 +1,35 @@
+<h2>Editer le livre  n° {{candidat!.id}} :</h2>
+<form id="addForm" (ngSubmit)="editCandidat(f)" #f="ngForm">
+    <div class="mb-3">
+      <label for="nom" class="form-label">nom</label>
+      <input type="text" class="form-control" id="nom" name="nom" #nom="ngModel" ngModel  [(ngModel)]="candidat!.nom" required />  
+    </div>
+    <div class="mb-3">
+      <label for="prenom" class="form-label">prenom</label>
+      <input type="text" class="form-control" id="prenom" name="prenom" #prenom="ngModel" ngModel [(ngModel)]="candidat!.prenom" required/>
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label">email</label>
+      <input type="text" class="form-control" id="email" name="email" #email="ngModel" ngModel [(ngModel)]="candidat!.email" required/>
+    </div>
+    <div class="mb-3">
+        <label for="numCarteId" class="form-label">numCarteId</label>
+        <input type="text" class="form-control" id="numCarteId" name="numCarteId" #numCarteId="ngModel" ngModel [(ngModel)]="candidat!.numCarteId" required/>
+      </div>
+      <div class="mb-3">
+        <label for="photo" class="form-label">photo</label>
+        <input type="text" class="form-control" id="photo" name="photo" #photo="ngModel" ngModel [(ngModel)]="candidat!.photo" required/>
+      </div>
+      <div class="mb-3">
+        <label for="motDepasse" class="form-label">motDepasse</label>
+        <input type="text" class="form-control" id="motDepasse" name="motDepasse" #motDepasse="ngModel" ngModel [(ngModel)]="candidat!.pw" required/>
+      </div>
+    <button 
+        type="submit" 
+        id="btnValidAdd" 
+        class="btn btn-primary mb-3"
+        [disabled]="f.invalid">
+            Valider
+        </button>
+        
+  </form>

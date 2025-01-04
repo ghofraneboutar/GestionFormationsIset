@@ -1,0 +1,36 @@
+<H2>{{title}}</H2>
+<a routerLink="/candidats/add" class="btn btn-success mb-3"> Ajouter un candidat</a>
+<table class="table table-striped">
+    <thead>
+      <tr class="table-dark">
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">#</th>
+        <th>nom</th>
+        <th>prenom</th>
+        <th>email</th>
+        <th>carteID</th>
+        <th>photo</th>
+        <th>motDepasse</th>
+        <th>modifier</th>
+        <th>supprimer</th>
+      </tr>
+
+      @for (candidat of candidats; track $index) {
+        <tr>
+          <th scope="row">{{candidat.id}}</th>
+          <td>{{candidat.nom}}</td>
+          <td>{{candidat.prenom}}</td>
+          <td>{{candidat.email}}</td>
+          <td>{{candidat.numCarteId}}</td>
+          <td><img src="{{ candidat.photo}}" class="card-img" style="height: 20px; width: 30px;" /></td>
+          <td>{{candidat.pw}}</td>
+          <td><a class="btn btn-primary" [routerLink]="['/candidats','edit',candidat.id]">Editer</a></td>
+          <td><button class="btn btn-danger" (click)="deleteCandidat(candidat.id)">Supprimer</button></td>
+
+        </tr>
+      }
+</tbody>
+</table>

@@ -1,0 +1,29 @@
+<h2>Editer la session  n° {{session!.id}} :</h2>
+<form id="addForm" (ngSubmit)="editSession(f)" #f="ngForm">
+    <div class="mb-3">
+      <label for="dateDebut" class="form-label">dateDebut</label>
+      <input type="text" class="form-control" id="datedebut" name="datedebut" #datedebut="ngModel" ngModel  [(ngModel)]="session!.dateDebut" required />  
+    </div>
+    <div class="mb-3">
+      <label for="dateFin" class="form-label">dateFin</label>
+      <input type="text" class="form-control" id="dateFin" name="dateFin" #dateFin="ngModel" ngModel [(ngModel)]="session!.dateFin" required/>
+    </div>
+    <div class="mb-3">
+      <label for="description" class="form-label">description</label>
+      <input type="text" class="form-control" id="description" name="description" #description="ngModel" ngModel [(ngModel)]="session!.description" required/>
+    </div>
+    <div class="mb-3">
+        <label for="formation" class="form-label">formation</label>
+        <input type="number" class="form-control" id="formation" name="formation" #formation="ngModel" ngModel [(ngModel)]="session!.formation" required/>
+      </div>
+      
+    <button 
+        type="submit" 
+        id="btnValidAdd" 
+        class="btn btn-primary mb-3"
+        [disabled]="f.invalid">
+            Valider
+        </button>
+        
+  </form>
++    
